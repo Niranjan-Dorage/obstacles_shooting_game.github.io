@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    overflow: hidden;
+}
+
+.gamecontainer {
+    position: fixed;
+    background-image: linear-gradient(rgb(15, 10, 35), rgb(45, 38, 73), rgb(15, 10, 35));
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+.tank {
+    background-image: url(https://lh3.googleusercontent.com/Fnx0VmIqJu_CSX_Di8F-W8hPf9kEWazfShEpC-gXGl3MoZNuJBv-V_mNZq9-gq5OYoT9qDRO9xmDiLwa6PB7iuhO3Frh4ntjV1EtJOiFTfq1uC4Y1yltPVUCMoFxwsL47CvyvA60eu1kWRkfFg6miUfuGm0tSb6b6tgTw5Bb2ak3f4U-iKKkLQn9u_vKUGDWZc9TvGVCYXWtSdpx9RwvSSs_V9OCzHlT4gUnXpjK0y1I_0k-_OVrNaoZc1SDYtSTTVm1jo-FRiB0HoovUG7eDVJO0oCnAhc-mlaD1g_1_zPq26hjO2pTDkDEuV9yGPfr4mQhT6RmQCOvivWRz7u-XN81NRNB3NmGB-e4tLZuETQlSAC40HyrWwIN0rgV6EIltalGdKHpCR0Sutrj78DWtmGgzqmTWwmfSKuiKbW8Ir56H2thMeFAwijcymY-rp5h9i6cb3lGYF2-qrED7sQ9NFXcrcyIws74yrrO7M-nfw8I74m9WOfFdzmYdiC1Tsr5GPlK-_aTemH5RN9IA8RF07AsgbfWh64I81Yy-Ya18XU_OB3RIzH82MA0AQrbXVa7UcFYbLDF9rHAQho0uwlf9_yxEhVN7IU-JozS70UT_ZLpbPkIgw0GhgGPSPnyyLEMB_I9KdGvxj1AIorWFViF9YGAZxD-wCnHtneMp6p5RnM-dPhGedRuiexyiCz6WfhMcaCQiA8K0_7s4vhl5Ia8nTHt_HI5vD1C54pojTJev5BJrekYGn6xilIqj6keabcR1Qh2RqzHhH38kWpI6J9qxY-BuCjawI9GRuuM6-GJcJqCpXZP5FHsXFno8aqOGFlqMY2lMiJKbm9H0g6gcV69gp0CXhZI3ydQbCRux_YX_d92mE_Td-azqfHYFS3kYYBb9qL-udv8lYDbz21p_YOfwoSMvL5pxHMEpirjz4wCTeXDJweq6w=s220-no?authuser=0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    animation: tank 2s;
+    /* animation-iteration-count: 10000; */
+}
+
+@keyframes tank {
+    0% {
+        rotate: 0deg;
+    }
+
+    25% {
+        rotate: 90deg;
+    }
+
+    75% {
+        rotate: -90deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+
+
+}
+
+.game {
+
+    height: 100px;
+    background-color: red;
+}
+
+.fire {
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.animatetank {
+
+    animation: tank 2.7s reverse linear;
+    animation-iteration-count: 10000;
+}
+
+@keyframes animatetank {
+    0% {
+        rotate: 0deg;
+    }
+
+    25% {
+        rotate: 90deg;
+    }
+
+    50% { 
+        rotate: 180deg;
+    }
+
+    75% {
+        rotate: 270deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+
+}
+
+.bullet {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 72px;
+    left: 90px;
+    animation: animatebullet 0.8s linear infinite;
+    animation-delay: 2.5s;
+    /* animation-duration: 1s; */
+    /* animation-iteration-count: 1; */
+}
+
+@keyframes animatebullet {
+    0% {
+        left: 130px;
+    }
+
+    25% {
+        left: 30vw;
+    }
+
+    50% {
+        left: 50vw;
+    }
+
+    75% {
+        left: 80vw;
+    }
+
+    100% {
+        left: 100vw;
+    }
+
+}
+
+.move {
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    width: 1000px;
+    /* background-color: black; */
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background-color: gray; */
+
+
+}
+
+.move1 {
+    width: 75px;
+    height: 35px;
+    /* margin: 30px; */
+    /* position:relative; */
+    padding: 10px;
+    /* justify -content: center; */
+    text-align: center;
+    font-size: 22px;
+    /* position: absolute; */
+    font-weight: 500;
+    /* padding: 10px; */
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: rgb(255, 0, 0);
+    /* margin-top: 10px ; */
+    margin: 14px;
+}
+
+:hover.move1 {
+    /* padding: 11px;
+    margin: 11px; */
+    background-color: rgb(206, 0, 0);
+    color: rgb(255, 255, 255);
+
+}
+
+.animatedown {
+    position: absolute;
+    top: 10px;
+}
